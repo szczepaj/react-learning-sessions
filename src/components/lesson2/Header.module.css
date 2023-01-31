@@ -1,0 +1,31 @@
+.header {
+    color: white;
+    font-size: 46px;
+    background-color: rgba(0,0,0, .3);
+    padding: 10px;
+}
+
+.dark {
+    composes: header;
+    background-color: dimgrey;
+}
+
+.perfect {
+    composes: header;
+    background-color: pink;
+}
+
+.flash {
+    composes: header;
+    background-color: limegreen;
+}
+
+.outlined {
+    composes: header;
+    border: 5px solid black;
+}
+
+.shadowed {
+    composes: header;
+    box-shadow: 20px 10px 0 rgba(0, 0, 0, .2);
+}

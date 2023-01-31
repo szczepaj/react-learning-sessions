@@ -1,0 +1,26 @@
+.header {
+    color: white;
+    font-size: 46px;
+    background-color: rgba(0,0,0, .3);
+    padding: 10px;
+}
+
+.header.dark {
+    background-color: dimgrey;
+}
+
+.header.perfect {
+    background-color: pink;
+}
+
+.header.flash {
+    background-color: limegreen;
+}
+
+.header.outlined {
+    border: 5px solid black;
+}
+
+.header.shadowed {
+    box-shadow: 20px 10px 0 rgba(0, 0, 0, .2);
+}
