@@ -1,12 +1,21 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import './App.css';
-import {Counter} from "./components/lesson-3/Counter/Counter";
+import {LoginForm} from "./components/lesson4/LoginForm";
+import {LoginFormFormik} from "./components/lesson4/LoginFormFormik";
+import {LoginFormHook} from "./components/lesson4/LoginFormHook";
 
 class App extends Component {
+    handleLogin = (state) => {
+        console.log(state)
+    }
+
     render() {
       return (
         <div className="App">
-            <Counter step={1} />
+            Let's sign in
+            {/*<LoginForm handleLogin={this.handleLogin} />*/}
+            <LoginFormFormik handleLogin={this.handleLogin} />
+            {/*<LoginFormHook handleLogin={this.handleLogin} />*/}
         </div>
       );
 
