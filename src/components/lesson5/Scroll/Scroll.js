@@ -13,7 +13,7 @@ export class Scroll extends React.Component {
                 <div style={{
                     backgroundColor: 'red',
                     width: 400,
-                    position: 'absolute',
+                    position: 'fixed',
                     top: 20,
                     left: 40,
                     height: 50
