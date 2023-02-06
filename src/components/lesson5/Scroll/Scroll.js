@@ -4,8 +4,53 @@ const boxes = Array.from(Array(10))
 
 export class Scroll extends React.Component {
     state = {
-        title: 'Welcome'
+        title: 'Welcome',
+        progress: 0,
+        isFirstRun: true
     }
+
+    handleScroll = () => {
+        const currentBottomPosition = window.scrollY + window.innerHeight
+        const progressValue = currentBottomPosition / document.documentElement.scrollHeight
+
+        this.setState({
+            progress: progressValue
+        })
+    }
+
+    handleReachBottom = () => {
+        window.scrollTo(0,0)
+        document.removeEventListener('scroll', this.handleScroll)
+        this.setState({
+            title: 'You have made it!',
+            progress: 0,
+
+        })
+    }
+
+    handleRestart = () => {
+        document.addEventListener('scroll', this.handleScroll)
+        this.setState({
+            title: 'Welcome back!',
+            isFirstRun: false
+        })
+    }
+
+    componentDidMount() {
+        document.addEventListener('scroll', this.handleScroll)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('scroll', this.handleScroll)
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.progress !== this.state.progress && this.state.progress === 1) {
+            this.handleReachBottom()
+        }
+    }
+
+
     render() {
         return (
             <div>
@@ -20,12 +65,13 @@ export class Scroll extends React.Component {
                 }}>
                     <div style={{
                         backgroundColor: 'green',
-                        width: 100,
+                        width: this.state.progress * 400,
                         height: 50
                     }}>
 
                     </div>
                 </div>
+                {!this.state.isFirstRun && <button onClick={this.handleRestart}>Let's try again</button>}
                 {boxes.map((_, i ) => (
                     <div style={{
                         backgroundColor: 'black',
