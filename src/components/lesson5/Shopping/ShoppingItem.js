@@ -8,14 +8,19 @@ export class ShoppingItem extends React.PureComponent{
         deleteItem(id)
     }
 
+    shouldComponentUpdate() {
+        // Komponent zaktualizuje się każdym razem gdy nie jest PureComponentem
+        // Domyslna implementacja shouldComponentUpdate zawsze zwraca true
+        // Implementacja shouldComponentUpdate w przypadku PureComponent robi shallowComparison gdzie porównuje wartości propsów/stanu
+    }
+
     componentWillUnmount() {
         // alert(`${this.props.item.name} is going to be removed`)
     }
 
-    componentDidUpdate(prevProps) { //sprostowac porownanie obiektu prev i current
-        console.log('previous', prevProps.item)
-        console.log('current:', this.props.item)
-        console.log('Czy jestem tym samym obiektem', prevProps.item, this.props.item)
+    componentDidUpdate(prevProps, prevState) {
+        console.log('prev props', prevProps.item)
+        console.log('current props', this.props.item)
     }
 
     render() {

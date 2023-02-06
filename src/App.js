@@ -12,7 +12,8 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-            <Scroll />
+            {/*<Scroll />*/}
+            <Shopping />
         </div>
       );
 
