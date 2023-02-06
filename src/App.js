@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import './App.css';
-import {LoginForm} from "./components/lesson4/LoginForm";
-import {LoginFormFormik} from "./components/lesson4/LoginFormFormik";
-import {LoginFormHook} from "./components/lesson4/LoginFormHook";
+
+import {Shopping} from "./components/lesson5/Shopping/Shopping";
+import {Scroll} from "./components/lesson5/Scroll/Scroll";
 
 class App extends Component {
     handleLogin = (state) => {
@@ -12,10 +12,7 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-            Let's sign in
-            {/*<LoginForm handleLogin={this.handleLogin} />*/}
-            <LoginFormFormik handleLogin={this.handleLogin} />
-            {/*<LoginFormHook handleLogin={this.handleLogin} />*/}
+            <Shopping/>
         </div>
       );
 
