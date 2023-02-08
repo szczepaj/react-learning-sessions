@@ -6,7 +6,7 @@ const fetchData = async () => {
 
     try {
 
-    } catch () {
+    } catch (_e) {
 
     }
 
