@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import './App.css';
+import {BoredApp} from "./components/lesson6/BoredApp/BorderApp";
 
-import {Shopping} from "./components/lesson5/Shopping/Shopping";
-import {Scroll} from "./components/lesson5/Scroll/Scroll";
 
 class App extends Component {
     handleLogin = (state) => {
@@ -12,7 +11,7 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-            <Scroll />
+            <BoredApp />
         </div>
       );
 
