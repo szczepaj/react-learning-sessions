@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
-import {BoredApp} from "./components/lesson6/BoredApp/BorderApp";
+import {BoredApp} from "./components/lesson6/BoredApp/BoredApp";
 import {Article} from "./components/lesson6/Article";
 
 
@@ -12,8 +12,8 @@ class App extends Component {
     render() {
       return (
         <div className="App">
-            {/*<BoredApp />*/}
-            <Article />
+            <BoredApp />
+            {/*<Article />*/}
         </div>
       );
 
