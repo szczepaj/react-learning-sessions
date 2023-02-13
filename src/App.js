@@ -1,23 +1,19 @@
-import React, { Component } from 'react'
+import React, {Component, useState} from 'react'
 import './App.css';
-import {BoredApp} from "./components/lesson6/BoredApp/BoredApp";
-import {Article} from "./components/lesson6/Article";
+import {Counter} from "./components/lesson7/Counter";
 
 
-class App extends Component {
-    handleLogin = (state) => {
-        console.log(state)
-    }
+const App = () => {
+    const [name, setName] = useState('')
 
-    render() {
+    const handleButton = () => setName('Jakub')
+
       return (
         <div className="App">
-            <BoredApp />
-            {/*<Article />*/}
+            <Counter name={name} />
+            <button onClick={handleButton}>Set my name to Jakub</button>
         </div>
       );
-
-    }
 }
 
 export default App;
