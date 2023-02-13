@@ -12,6 +12,7 @@ export class ShoppingItem extends React.PureComponent{
         // Komponent zaktualizuje się każdym razem gdy nie jest PureComponentem
         // Domyslna implementacja shouldComponentUpdate zawsze zwraca true
         // Implementacja shouldComponentUpdate w przypadku PureComponent robi shallowComparison gdzie porównuje wartości propsów/stanu
+        return true
     }
 
     componentWillUnmount() {
