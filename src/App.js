@@ -1,16 +1,22 @@
 import React, {Component, useState} from 'react'
 import './App.css';
-import {Counter} from "./components/lesson7/Counter";
-import {Shopping} from "./components/lesson7/Shopping/Shopping";
-import {BoredApp} from "./components/lesson7/BoredApp/BoredApp";
+import {Bored} from "./components/lesson8/BoredApp/Bored";
+import { MyContext } from './components/lesson8/MyContext'
+import {CalculateFactorial} from "./components/lesson8/Factorial";
+import {Planet} from "./components/lesson8/Planet";
 
 
 const App = () => {
-
+    const [name, setName] = useState('')
 
       return (
         <div className="App">
-            <BoredApp />
+            {/*<MyContext.Provider value={{foo: 'bar'}}>*/}
+            {/*    <Bored/>*/}
+            {/*</MyContext.Provider>*/}
+            {/*<CalculateFactorial />*/}
+            <input type="text" onChange={evt => setName(evt.target.value)}  value={name}/>
+            <Planet name={name}/>
         </div>
       );
 }
