@@ -1,23 +1,17 @@
 import React, {Component, useState} from 'react'
 import './App.css';
-import {Bored} from "./components/lesson8/BoredApp/Bored";
-import { MyContext } from './components/lesson8/MyContext'
-import {CalculateFactorial} from "./components/lesson8/Factorial";
-import {Planet} from "./components/lesson8/Planet";
+import {GoItApp} from "./components/lesson9/gotiApp/components/App";
+import {BrowserRouter} from "react-router-dom";
 
 
 const App = () => {
-    const [name, setName] = useState('')
 
       return (
-        <div className="App">
-            {/*<MyContext.Provider value={{foo: 'bar'}}>*/}
-            {/*    <Bored/>*/}
-            {/*</MyContext.Provider>*/}
-            {/*<CalculateFactorial />*/}
-            <input type="text" onChange={evt => setName(evt.target.value)}  value={name}/>
-            <Planet name={name}/>
-        </div>
+          <BrowserRouter>
+            <div className="App">
+                <GoItApp/>
+            </div>
+          </BrowserRouter>
       );
 }
 
