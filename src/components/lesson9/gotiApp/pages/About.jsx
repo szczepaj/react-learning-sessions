@@ -1,3 +1,5 @@
+import {Link, Outlet} from "react-router-dom";
+
 export const About = () => {
   return (
     <main>
@@ -15,6 +17,10 @@ export const About = () => {
         dolorum illum voluptatum dolores! Quas perferendis quis alias excepturi
         eaque voluptatibus eveniet error, nulla rem iusto?
       </p>
+      <Link to='map'>Gdzie jestem?</Link>
+      <Link to='contact'>Formularz kontaktowy?</Link>
+      <Link to='mission'>Moja misja</Link>
+      <Outlet />
     </main>
   );
 };

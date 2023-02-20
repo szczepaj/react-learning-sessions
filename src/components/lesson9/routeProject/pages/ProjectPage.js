@@ -1,14 +1,20 @@
 import React from 'react'
-import {getProjectById} from "./fakeApi";
+import { useParams } from 'react-router-dom'
+import {getProjectById} from "../../projects/fakeApi";
 
 export const ProjectPage = () => {
-    const id = 1
-    const project = getProjectById(id)
+    const {projectId} = useParams()
+    const project = getProjectById(Number(projectId))
 
     return (
         <div>
-            <h1>{project.name}</h1>
-            <h3>{project.description}</h3>
+            {project && (
+                <>
+                    <h1>{project.name}</h1>
+                    <h3>{project.description}</h3>
+                </>
+            )}
+            {!project && <h2>Project not found</h2>}
         </div>
     )
 }

@@ -1,17 +1,15 @@
 import React, {Component, useState} from 'react'
 import './App.css';
-import {GoItApp} from "./components/lesson9/gotiApp/components/App";
-import {BrowserRouter} from "react-router-dom";
+import {Starter} from "./components/lesson9/routeProject/Starter";
 
 
 const App = () => {
 
       return (
-          <BrowserRouter>
+
             <div className="App">
-                <GoItApp/>
+                <Starter/>
             </div>
-          </BrowserRouter>
       );
 }
 
