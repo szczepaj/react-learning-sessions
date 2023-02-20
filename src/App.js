@@ -1,6 +1,7 @@
 import React, {Component, useState} from 'react'
 import './App.css';
 import {Starter} from "./components/lesson9/routeProject/Starter";
+import {Form} from "./components/lesson9/reducer/Form";
 
 
 const App = () => {
@@ -8,7 +9,7 @@ const App = () => {
       return (
 
             <div className="App">
-                <Starter/>
+               <Form/>
             </div>
       );
 }
