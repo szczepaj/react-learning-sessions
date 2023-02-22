@@ -1,0 +1,81 @@
+// pictures - Array
+// 1. Użycie zmiennej w deps array spoza hooka useEffect
+// 2. Użycie funkcji jako składowa w deps array
+
+const Component = ({ pictures, name }) => {
+    const handleScroll = useCallback(() => {
+        // handle scroll body
+
+    }, [])
+
+    useEffect(() => {
+        handleScroll()
+    }, [pictures.length])
+}
+
+ // imperatywne - mówimy jak program ma coś zrobić ( <Navigate /> )
+let arr = [1, 2, 3];
+let filteredArr = [];
+for (let i = 0; i < arr.length; i++) {
+    let v = arr[i];
+    if (v != 1) {
+        filteredArr.push(v);
+    }
+}
+
+// deklaratywne - mówimy co program ma zrobić (navigate() )
+let arr = [1, 2, 3];
+function checkValue(v) {
+    return v != 1;
+}
+console.log(arr.filter(checkValue));
+
+// Optional chaining
+
+const parsedParams = {
+    brand: 'apple'
+}
+
+parsedParams?.brand || '' // => apple
+
+const parsedParams = {}
+
+parsedParams?.brand || '' => undefined || '' => ''
+
+// nie ma parsedParams
+parsedParams?.brand || '' => undefined || '' => ''
+
+parsedParams?.brand ?? '' => zwróci prawą stronę jeśli lewa jest null lub  undefined
+parsedParams?.brand || '' => zwróci prawą stronę jeśli lewa jest falsy value => null, undefined, 0, false, ''
+
+
+// useLocation
+
+// {
+//     pathname: string,
+//     search: string,
+//     hash: string,
+//     state: Object,
+//     key: string
+// }
+
+// http://localhost:3000/product-list?brand=appl&name=ip&category=smart
+
+// {
+//     pathname: 'product-list',
+//     search: '?brand=appl&name=ip&category=smart',
+//     hash: '',
+//     state: {},
+//     key: 'random-generated-key'
+// }
+
+
+
+
+
+
+
+
+
+
+
