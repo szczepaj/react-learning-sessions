@@ -9,6 +9,8 @@ const App = () => {
       return (
 
             <div className="App">
+                  {/*<TodoApp />*/}
+                <ShoppingCartApp />
             </div>
       );
 }
