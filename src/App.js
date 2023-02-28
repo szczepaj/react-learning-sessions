@@ -1,9 +1,7 @@
 import React, {Component, useState} from 'react'
 import './App.css';
-import {Starter} from "./components/lesson9/routeProject/Starter";
-import {Form} from "./components/lesson9/reducer/Form";
-import {ProductApp} from "./components/lesson10/ProductsApp/ProductsApp";
-import {LoginApp} from "./components/lesson10/LoginForm/LoginApp";
+import {TodoApp} from "./components/lesson11/todo-app/components/App";
+import ShoppingCartApp from "./components/lesson11/shopping-cart/containers/App";
 
 
 const App = () => {
@@ -11,7 +9,6 @@ const App = () => {
       return (
 
             <div className="App">
-               <ProductApp />
             </div>
       );
 }
