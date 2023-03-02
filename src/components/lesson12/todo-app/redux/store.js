@@ -1,11 +1,10 @@
-import {combineReducers, createStore} from 'redux'
+import {filtersReducer} from "./filters/filters.slice";
+import { tasksReducer } from './tasks/tasks.slice'
+import {configureStore} from "@reduxjs/toolkit";
 
-import { devToolsEnhancer } from "@redux-devtools/extension";
-import {tasksReducer} from "./tasks/tasks.reducer";
-import {filtersReducer} from "./filters/filters.reducer";
-
-const rootReducer = combineReducers({
+export const store = configureStore({
+    reducer: {
         tasks: tasksReducer,
         filters: filtersReducer
-    })
-export const store = createStore(rootReducer,  devToolsEnhancer())
+    }
+})

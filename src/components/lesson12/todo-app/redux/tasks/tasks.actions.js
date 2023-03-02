@@ -1,27 +1,22 @@
-export const TaskActions = {
-    ADD_TASK: 'tasks/addTask',
-    DELETE_TASK: 'tasks/deleteTask',
-    TOGGLE_COMPLETED: 'tasks/toggleCompleted'
-}
+import {createAction} from "@reduxjs/toolkit";
 
-export const addTaskAction = (text, id) => ({
-    type: TaskActions.ADD_TASK,
+export const addTaskAction = createAction('tasks/addTask', (text,id ) => ({
     payload: {
         id,
         text,
         completed: false
     }
-})
+}))
 
-export const deleteTaskAction = id => ({
-    type: TaskActions.DELETE_TASK,
-    payload: { id }
-})
+// addTaskAction.type => tasks/addTask
 
-export const toggleCompletedAction = id => ({
-    type: TaskActions.TOGGLE_COMPLETED,
+export const deleteTaskAction = createAction('tasks/deleteTask', id => ({
     payload: { id }
-})
+}))
+
+export const toggleCompletedAction = createAction('tasks/toggleCompleted', id => ({
+    payload: { id }
+}))
 
 
 // module/action

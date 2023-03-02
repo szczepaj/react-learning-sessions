@@ -1,11 +1,8 @@
-export const FilterActions = {
-    SET_STATUS: 'filters/setStatusFilter'
-}
+import {createAction} from "@reduxjs/toolkit";
 
-export const setStatusFilterAction = status => ({
-    type: FilterActions.SET_STATUS,
+export const setStatusFilterAction = createAction('filters/setStatusFilter', status => ({
     payload: { status }
-})
+}))
 
 // module/action
 // MODULE_ACTION_NAME

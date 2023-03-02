@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {store} from "./components/lesson12/shopping-cart/redux/store";
+import {store} from "./components/lesson12/todo-app/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

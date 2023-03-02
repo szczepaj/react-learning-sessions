@@ -1,4 +1,5 @@
-import {TaskActions} from "./tasks.actions";
+import {addTaskAction, deleteTaskAction, toggleCompletedAction} from "./tasks.actions";
+import {createReducer} from "@reduxjs/toolkit";
 
 const initialTasksState = [
         { id: 0, text: "Learn HTML and CSS", completed: true },
@@ -8,31 +9,33 @@ const initialTasksState = [
         { id: 4, text: "Build amazing apps", completed: false },
     ]
 
-export const tasksReducer = (state = initialTasksState, action) => {
-    switch(action.type) {
-        case TaskActions.ADD_TASK: {
-            const { id, text, completed } = action.payload
-            return state.concat({ id, text, completed })
 
-        }
-        case TaskActions.DELETE_TASK: {
-            const { id } = action.payload
-            return  state.filter(task => task.id !== id)
+export const tasksReducer = createReducer(initialTasksState, {
+    [addTaskAction]: (state, action) => {
+        state.push(action.payload)
+    },
+    [deleteTaskAction]: (state, action) => {
+        const { id } = action.payload
+        return  state.filter(task => task.id !== id)
+    },
+    [toggleCompletedAction]: (state, action) => {
+        const { id } = action.payload
 
-        }
-        case TaskActions.TOGGLE_COMPLETED: {
-            const { id } = action.payload
-            return state.map(task => {
-                    if(task.id === id) {
-                        return {
-                            ...task,
-                            completed: !task.completed
-                        }
-                    }
-                    return task
-                })
-        }
-        default:
-            return state
+        // sposób mutowalny
+        // for(const task of state) {
+        //     if(task.id === action.payload.id) {
+        //         task.completed = !task.completed
+        //     }
+        // }
+
+        return state.map(task => {
+            if(task.id === id) {
+                return {
+                    ...task,
+                    completed: !task.completed
+                }
+            }
+            return task
+        })
     }
-}
+})

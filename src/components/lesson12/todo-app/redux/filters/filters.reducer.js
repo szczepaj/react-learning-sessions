@@ -1,16 +1,13 @@
-import {FilterActions} from "./filters.actions";
+import { setStatusFilterAction} from "./filters.actions";
+import {createReducer} from "@reduxjs/toolkit";
 
 const initialFilterState = {
         status: 'all'
     }
 
-export const filtersReducer = (state = initialFilterState, action) => {
-    switch(action.type) {
-        case FilterActions.SET_STATUS: {
-            const { status } = action.payload
-            return { status }
-        }
-        default:
-            return state
+export const filtersReducer = createReducer(initialFilterState, {
+    [setStatusFilterAction]: (state, action) => {
+        const { status } = action.payload
+        return { status }
     }
-}
+})
