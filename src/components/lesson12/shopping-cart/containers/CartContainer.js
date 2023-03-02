@@ -2,7 +2,7 @@ import React from 'react'
 
 import Cart from '../components/Cart'
 import {useDispatch, useSelector} from "react-redux";
-import {checkoutAction} from "../redux/actions";
+import {checkoutAction} from "../redux/products.slice";
 import api from '../api/shop'
 import {getCartData} from "../redux/selectors";
 

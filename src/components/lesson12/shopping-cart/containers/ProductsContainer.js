@@ -2,7 +2,7 @@ import React from 'react'
 import ProductItem from '../components/ProductItem'
 import ProductsList from '../components/ProductsList'
 import {useDispatch, useSelector} from "react-redux";
-import {addToCartAction} from "../redux/actions";
+import {addToCartAction} from "../redux/products.slice";
 
 const ProductsContainer = () => {
     const dispatch = useDispatch()

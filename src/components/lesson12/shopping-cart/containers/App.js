@@ -3,7 +3,7 @@ import ProductsContainer from './ProductsContainer'
 import CartContainer from './CartContainer'
 import api from '../api/shop'
 import {useDispatch} from "react-redux";
-import {getProductsAction} from "../redux/actions";
+import {getProductsAction} from "../redux/products.slice";
 
 const ShoppingCartApp = () => {
     const dispatch = useDispatch()
