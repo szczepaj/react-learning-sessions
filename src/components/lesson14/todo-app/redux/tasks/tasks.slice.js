@@ -1,6 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {addNewTask, deleteSelectedTask, fetchTasks, toggleSelectedTask} from "./tasks.thunk";
 
+const previousTasksState = []
+
 const initialTasksState = {
     isPending: false,
     error: null,
@@ -21,7 +23,6 @@ const tasksSlice = createSlice({
     initialState: initialTasksState,
     extraReducers: {
         [fetchTasks.pending]: handlePendingState,
-        // ['tasks/fetchTasks/pending']: handlePendingState,
         [deleteSelectedTask.pending]: handlePendingState,
         [toggleSelectedTask.pending]: handlePendingState,
         [addNewTask.pending]: handlePendingState,

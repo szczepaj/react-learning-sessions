@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {store} from "./components/lesson13/todo-app/redux/store";
+import {store} from "./components/lesson14/shopping-cart/redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,3 +20,5 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// TODO: middleware w reduxie standardowym
