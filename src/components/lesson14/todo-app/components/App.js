@@ -5,6 +5,7 @@ import { TaskList } from "./TaskList/TaskList";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {fetchTasks} from "../redux/tasks/tasks.thunk";
+import {FileInput} from "./FileInput/FileInput";
 
 export const TodoApp = () => {
     const dispatch = useDispatch()
@@ -14,9 +15,10 @@ export const TodoApp = () => {
 
   return (
     <Layout>
-      <AppBar />
-      <TaskForm />
-      <TaskList />
+    <FileInput/>
+      {/*<AppBar />*/}
+      {/*<TaskForm />*/}
+      {/*<TaskList />*/}
     </Layout>
   );
 };

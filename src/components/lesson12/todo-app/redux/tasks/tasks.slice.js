@@ -26,9 +26,17 @@ const tasksSlice = createSlice({
                 }
             }
         },
-        deleteTaskAction(state, action) {
-            const id = action.payload
-            return  state.filter(task => task.id !== id)
+        deleteTaskAction: {
+            reducer(state, action) {
+                const id = action.payload
+                return state.filter(task => task.id !== id)
+            },
+            prepare(id) { // domyslny sposób generowania akcji przez redux toolkita w slice
+                return {
+                    payload: id
+                }
+            }
+
         },
         toggleCompletedAction(state, action) {
             const id = action.payload

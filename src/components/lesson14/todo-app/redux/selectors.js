@@ -62,3 +62,16 @@ export const selectFilteredTasksWithReselect = createSelector([selectTasksList, 
 
     return taskList
 })
+
+// Wykorzystanie createSelector - różne argumenty
+// 1. tablica selektorów
+// createSelector([select, select], (selectOutput, selectOutput) => {})
+//
+// 2. Selektory jako następujące argumenty
+// createSelector(select, select,select, select, select, (selectOutput, selectOutput, selectOutput, selectOutput, selectOutput) => {
+//
+// })
+
+// const selectCustomValue = createSelector([selectSomething, selectSomethingElse], () => {
+//     // cos sie dzieje
+// })
