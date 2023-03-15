@@ -3,7 +3,7 @@ import {createAsyncThunk} from "@reduxjs/toolkit";
 
 export const fetchTasks = createAsyncThunk('tasks/getTasks', async (_arg, thunkAPI) => {
     const { tasks } = thunkAPI.getState()
-    if(tasks?.list.length !== 0) return
+    if(tasks?.list.length !== 0) return []
 
     try {
         const response = await getTasks()
