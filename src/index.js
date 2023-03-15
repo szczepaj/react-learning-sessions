@@ -5,13 +5,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
-import {store} from "./components/lesson14/todo-app/redux/store";
+import {persistor, store} from "./components/lesson15/todo-app/redux/store";
+import {PersistGate} from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
       <BrowserRouter>
           <Provider store={store}>
-            <App />
+              <PersistGate loading={null} persistor={persistor}>
+                <App />
+              </PersistGate>
           </Provider>
       </BrowserRouter>
 );
@@ -20,5 +23,3 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-// TODO: reselect callbacki
-// TODO: output createSelector -> input useSelector

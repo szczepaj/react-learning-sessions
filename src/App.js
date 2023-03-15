@@ -1,7 +1,6 @@
 import React, {Component, useState} from 'react'
 import './App.css';
-import {TodoApp} from "./components/lesson14/todo-app/components/App";
-import ShoppingCartApp from "./components/lesson14/shopping-cart/containers/App";
+import {TodoApp} from "./components/lesson15/todo-app/components/App";
 
 
 const App = () => {
@@ -10,7 +9,6 @@ const App = () => {
 
             <div className="App">
                   <TodoApp />
-                {/*<ShoppingCartApp />*/}
             </div>
       );
 }
